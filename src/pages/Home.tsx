@@ -8,7 +8,7 @@ function Home() {
 
       <div className="home__grid">
         <Link
-          to="/catalogue/ana-marko"
+          to="/invitation-catalogue/ana-marko"
           className="home__card"
         >
           <h2>Ana & Marko</h2>
@@ -16,7 +16,7 @@ function Home() {
         </Link>
 
         <Link
-          to="/catalogue/jovana-nikola"
+          to="/invitation-catalogue/jovana-nikola"
           className="home__card"
         >
           <h2>Jovana & Nikola</h2>
