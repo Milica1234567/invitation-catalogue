@@ -1,22 +1,22 @@
-import "./Invitation1.css";
-import DoorIntro from "./components/DoorIntro/DoorIntro";
+import { useState } from "react";
 
-function Invitation1() {
+import DoorIntro from "./components/DoorIntro/DoorIntro";
+import Header from "./components/Header/Header";
+
+function Invitation2() {
+  const [invitationOpened, setInvitationOpened] = useState(false);
+
   return (
-  <>
-    <DoorIntro />
-     <div
-        style={{
-          minHeight: "100vh",
-          background: "pink",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        POZIVNICA JE ISPOD
-      </div>
-  </> );
+    <>
+      <DoorIntro
+        onOpen={() => setInvitationOpened(true)}
+      />
+
+      <main>
+        <Header revealed={invitationOpened} />
+      </main>
+    </>
+  );
 }
 
-export default Invitation1;
+export default Invitation2;

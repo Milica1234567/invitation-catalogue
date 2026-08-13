@@ -4,12 +4,28 @@ import "./DoorIntro.css";
 import waxseal from "../../assets/waxsealAM.png";
 import backgroundDoor from "../../assets/backgroundDoor.png";
 
-function DoorIntro() {
+type DoorIntroProps = {
+  onOpen?: () => void;
+};
+
+function DoorIntro({ onOpen }: DoorIntroProps) {
   const [opened, setOpened] = useState(false);
+  const [hidden, setHidden] = useState(false);
 
   const handleOpen = () => {
+    if (opened) return;
+
     setOpened(true);
+    onOpen?.();
+
+    window.setTimeout(() => {
+      setHidden(true);
+    }, 2400);
   };
+
+  if (hidden) {
+    return null;
+  }
 
   return (
     <div className={`door-intro ${opened ? "opened" : ""}`}>
@@ -37,19 +53,10 @@ function DoorIntro() {
         onClick={handleOpen}
         aria-label="Otvori pozivnicu"
       >
-        <img
-          className="seal-image"
-          src={waxseal}
-          alt=""
-          aria-hidden="true"
-        />
+        <img className="seal-image" src={waxseal} alt="" aria-hidden="true" />
       </button>
 
-      <button
-        type="button"
-        className="open-button"
-        onClick={handleOpen}
-      >
+      <button type="button" className="open-button" onClick={handleOpen}>
         Otvori pozivnicu
       </button>
     </div>
