@@ -1,0 +1,313 @@
+.door-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  width: 100%;
+  height: 100dvh;
+
+  overflow: hidden;
+
+  perspective: 1200px;
+
+  background: #ead9ba;
+}
+
+/* =========================
+   VRATA
+========================= */
+
+.door {
+  position: absolute;
+  top: 0;
+
+  width: 50%;
+  height: 100%;
+
+  overflow: hidden;
+
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+
+  background: #ead9ba;
+
+  transition:
+    transform 1.8s cubic-bezier(0.65, 0, 0.35, 1),
+    filter 1.8s ease;
+
+  will-change: transform;
+}
+
+/* LEVO */
+
+.door-left {
+  left: 0;
+
+  transform-origin: left center;
+
+  box-shadow:
+    inset -2px 0 4px rgba(70, 55, 40, 0.08);
+}
+
+/* DESNO */
+
+.door-right {
+  right: 0;
+
+  transform-origin: right center;
+
+  box-shadow:
+    inset 2px 0 4px rgba(70, 55, 40, 0.08);
+}
+
+/* =========================
+   SLIKA NA VRATIMA
+========================= */
+
+.door-background {
+  position: absolute;
+  inset: 0;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  /*
+    Cela embossing slika ostaje vidljiva.
+    Namerno je rastegnuta na proporcije krila.
+  */
+  object-fit: fill;
+
+  pointer-events: none;
+  user-select: none;
+
+  -webkit-user-drag: none;
+}
+
+/* desno krilo je mirror */
+
+.door-right .door-background {
+  transform: scaleX(-1);
+}
+
+/* =========================
+   SENKA NA SPOJU
+========================= */
+
+.door-left::after,
+.door-right::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+
+  width: 5px;
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+.door-left::after {
+  right: 0;
+
+  background: linear-gradient(
+    to left,
+    rgba(70, 55, 40, 0.1),
+    transparent
+  );
+}
+
+.door-right::after {
+  left: 0;
+
+  background: linear-gradient(
+    to right,
+    rgba(70, 55, 40, 0.1),
+    transparent
+  );
+}
+
+/* =========================
+   PEČAT
+========================= */
+
+.seal {
+  position: absolute;
+
+  top: 48%;
+  left: 50%;
+
+  z-index: 30;
+
+  width: 100px;
+  height: 100px;
+
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+.seal-image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  pointer-events: none;
+  user-select: none;
+
+  -webkit-user-drag: none;
+}
+
+/* =========================
+   OTVORI POZIVNICU
+========================= */
+
+.open-button {
+  position: absolute;
+
+  top: calc(48% + 72px);
+  left: 50%;
+
+  z-index: 30;
+
+  transform: translateX(-50%);
+
+  padding: 8px 10px;
+
+  border: 0;
+
+  background: transparent;
+
+  font-family: "Baskervville", serif;
+  font-size: 11px;
+  font-weight: 400;
+
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+
+  color: rgba(77, 66, 54, 0.75);
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+.open-button::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 28px;
+  height: 1px;
+
+  transform: translateX(-50%);
+
+  background: rgba(77, 66, 54, 0.25);
+}
+
+/* =========================
+   OTVARANJE
+========================= */
+
+.opened .door-left {
+  transform: rotateY(-108deg);
+
+  filter: brightness(0.94);
+}
+
+.opened .door-right {
+  transform: rotateY(108deg);
+
+  filter: brightness(0.94);
+}
+
+.opened .seal {
+  opacity: 0;
+
+  transform:
+    translate(-50%, -50%)
+    scale(0.72)
+    rotate(7deg);
+
+  pointer-events: none;
+}
+
+.opened .open-button {
+  opacity: 0;
+
+  transform:
+    translateX(-50%)
+    translateY(12px);
+
+  pointer-events: none;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .door-intro {
+    perspective: 1000px;
+  }
+
+  .seal {
+    width: 96px;
+    height: 96px;
+  }
+
+  .open-button {
+    top: calc(48% + 68px);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .door {
+    transition-duration: 0.4s;
+  }
+
+  .seal,
+  .open-button {
+    transition-duration: 0.2s;
+  }
+}
