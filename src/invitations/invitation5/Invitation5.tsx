@@ -1,0 +1,40 @@
+import { useEffect } from "react";
+
+import "./Invitation5.css";
+import Hero from "./components/Hero/Hero";
+import InvitationIntro from "./components/InvitationIntro/InvitationIntro";
+import DateEditorial from "./components/DateEditorial/DateEditorial";
+import Schedule from "./components/Schedule/Schedule";
+import Location from "./components/Location/Location";
+import RSVP from "./components/RSVP/RSVP";
+import Footer from "./components/Footer/Footer";
+
+function Invitation5() {
+  useEffect(() => {
+    const elements = document.querySelectorAll<HTMLElement>(".invitation-five [data-inv5-reveal]");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("inv5-visible");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.16, rootMargin: "0px 0px -7%" });
+
+    elements.forEach((element) => observer.observe(element));
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <main className="invitation-five">
+      <Hero />
+      <InvitationIntro />
+      <DateEditorial />
+      <Schedule />
+      <Location />
+      <RSVP />
+      <Footer />
+    </main>
+  );
+}
+
+export default Invitation5;

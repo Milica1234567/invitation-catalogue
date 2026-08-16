@@ -1,0 +1,6 @@
+.inv6-photo-intro { min-height: 100svh; overflow: hidden; background: var(--wine-dark); }
+.inv6-photo-intro img { width: 100%; height: 100svh; display: block; object-fit: cover; object-position: 52% center; filter: saturate(0.72) contrast(1.04); }
+.inv6-photo-intro::after { content: ""; position: absolute; inset: 0; background: rgba(44, 13, 10, 0.18); pointer-events: none; }
+.inv6-photo-intro blockquote { position: absolute; z-index: 2; left: 24px; right: 24px; bottom: 11%; max-width: 470px; margin: 0; font-size: clamp(25px, 7vw, 43px); font-style: italic; line-height: 1.35; text-align: left; color: var(--ivory); text-shadow: 0 2px 18px rgba(38, 8, 8, 0.38); }
+
+@media (min-width: 700px) { .inv6-photo-intro blockquote { left: 9%; bottom: 13%; } }

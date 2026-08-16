@@ -38,6 +38,22 @@ function Home() {
           <h2>Invitation 4</h2>
           <p>Pogledaj pozivnicu</p>
         </Link>
+
+        <Link
+          to="/invitation-catalogue/invitation5"
+          className="home__card"
+        >
+          <h2>Invitation 5</h2>
+          <p>Pogledaj pozivnicu</p>
+        </Link>
+
+        <Link
+          to="/invitation-catalogue/invitation6"
+          className="home__card"
+        >
+          <h2>Invitation 6</h2>
+          <p>Pogledaj pozivnicu</p>
+        </Link>
       </div>
     </main>
   );

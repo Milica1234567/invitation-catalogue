@@ -1,0 +1,6 @@
+.inv6-footer { position: relative; box-sizing: border-box; min-height: 88svh; display: grid; place-items: center; padding: 120px 24px; background: var(--wine) url("../../assets/background.png") center / cover no-repeat; }
+.inv6-footer::after { content: ""; position: absolute; inset: 0; background: rgba(45, 5, 9, 0.15); }
+.inv6-footer__content { position: relative; z-index: 1; }
+.inv6-footer strong { display: block; font-size: 37px; font-weight: 400; letter-spacing: 0.27em; color: var(--ivory); }
+.inv6-footer time { display: block; margin-top: 27px; font-family: "Manrope", sans-serif; font-size: 9px; letter-spacing: 0.35em; color: rgba(247,240,228,0.7); }
+.inv6-footer p { margin: 48px 0 0; font-size: 17px; font-style: italic; color: rgba(247,240,228,0.78); }

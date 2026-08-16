@@ -1,0 +1,37 @@
+.inv5-rsvp { min-height: 110svh; padding: 130px 0 150px; background: var(--soft-white); }
+.inv5-rsvp header { text-align: left; }
+.inv5-rsvp header h2 { margin: 0; font-family: "Bodoni Moda", serif; font-size: clamp(43px, 12vw, 78px); font-weight: 400; line-height: 1.1; color: var(--taupe); }
+.inv5-rsvp header p { margin: 30px 0 0; font-family: "Manrope", sans-serif; font-size: 10px; line-height: 1.8; letter-spacing: 0.12em; color: var(--text-soft); }
+.inv5-rsvp form { display: grid; gap: 34px; width: min(100%, 560px); margin: 75px auto 0; text-align: left; }
+.inv5-rsvp__field { display: grid; gap: 8px; }
+.inv5-rsvp__field > span,
+.inv5-rsvp legend { font-family: "Manrope", sans-serif; font-size: 8px; font-weight: 400; letter-spacing: 0.28em; text-transform: uppercase; color: var(--warm-gray); }
+.inv5-rsvp input[type="text"],
+.inv5-rsvp select,
+.inv5-rsvp textarea { box-sizing: border-box; width: 100%; padding: 10px 1px 12px; border: 0; border-bottom: 1px solid var(--taupe-light); border-radius: 0; outline: none; background: transparent; color: var(--text); font: 17px "Bodoni Moda", serif; transition: border-color 0.35s ease; }
+.inv5-rsvp textarea { resize: vertical; }
+.inv5-rsvp select { appearance: none; }
+.inv5-rsvp input:focus,
+.inv5-rsvp select:focus,
+.inv5-rsvp textarea:focus { border-color: var(--champagne-dark); }
+.inv5-rsvp fieldset { margin: 0; padding: 0; border: 0; }
+.inv5-rsvp__choices { display: grid; gap: 10px; margin-top: 15px; }
+.inv5-rsvp__choices label { display: flex; align-items: center; gap: 11px; min-height: 34px; cursor: pointer; }
+.inv5-rsvp__choices input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.inv5-rsvp__choices i { position: relative; box-sizing: border-box; width: 16px; height: 16px; border: 1px solid var(--taupe-light); border-radius: 50%; }
+.inv5-rsvp__choices input:checked + i::after { content: ""; position: absolute; inset: 4px; border-radius: 50%; background: var(--taupe); }
+.inv5-rsvp__choices label:focus-within i { outline: 1px solid var(--champagne-dark); outline-offset: 3px; }
+.inv5-rsvp__choices span { font-family: "Manrope", sans-serif; font-size: 11px; font-weight: 300; color: var(--warm-gray); }
+.inv5-rsvp__submit { justify-self: start; margin-top: 17px; padding: 15px 28px; border: 1px solid var(--taupe); background: transparent; color: var(--warm-gray); font: 400 8px "Manrope", sans-serif; letter-spacing: 0.3em; text-transform: uppercase; cursor: pointer; transition: background 0.45s ease, color 0.45s ease; }
+.inv5-rsvp__submit:hover,
+.inv5-rsvp__submit:focus-visible { background: var(--taupe); color: var(--white); }
+.inv5-rsvp__success { margin-top: 75px; text-align: left; }
+.inv5-rsvp__success > span { font: 400 11px "Manrope", sans-serif; letter-spacing: 0.35em; color: var(--champagne-dark); }
+.inv5-rsvp__success h3 { margin: 23px 0 9px; font: 400 48px "Bodoni Moda", serif; color: var(--taupe); }
+.inv5-rsvp__success p { margin: 0; font-family: "Manrope", sans-serif; font-size: 11px; color: var(--text-soft); }
+.inv5-rsvp__success button { margin-top: 27px; padding: 6px 0; border: 0; border-bottom: 1px solid currentColor; background: transparent; color: var(--warm-gray); font: 8px "Manrope", sans-serif; letter-spacing: 0.25em; text-transform: uppercase; cursor: pointer; }
+
+@media (min-width: 700px) {
+  .inv5-rsvp header { padding-left: 7%; }
+  .inv5-rsvp__submit { justify-self: end; }
+}

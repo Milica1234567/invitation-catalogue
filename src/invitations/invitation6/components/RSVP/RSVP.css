@@ -1,0 +1,32 @@
+.inv6-rsvp { min-height: 105svh; padding: 125px 0 145px; background: var(--ivory); color: var(--ink); }
+.inv6-rsvp header { text-align: left; }
+.inv6-rsvp header .inv6-kicker { margin: 0 0 18px; color: var(--blush); }
+.inv6-rsvp h2 { margin: 0; font-family: "Cormorant Garamond", serif; font-size: clamp(44px, 11vw, 68px); font-weight: 400; color: var(--wine); }
+.inv6-rsvp form { display: grid; gap: 31px; width: min(100%, 520px); margin: 66px auto 0; text-align: left; }
+.inv6-rsvp__field { display: grid; gap: 8px; }
+.inv6-rsvp__field > span,
+.inv6-rsvp legend { font-family: "Manrope", sans-serif; font-size: 8px; font-weight: 300; letter-spacing: 0.27em; text-transform: uppercase; color: var(--wine-light); }
+.inv6-rsvp input[type="text"],
+.inv6-rsvp select,
+.inv6-rsvp textarea { box-sizing: border-box; width: 100%; padding: 9px 1px 11px; border: 0; border-bottom: 1px solid rgba(101, 30, 34, 0.38); border-radius: 0; outline: none; background: transparent; color: var(--ink); font: 18px "Cormorant Garamond", serif; transition: border-color 0.35s ease; }
+.inv6-rsvp textarea { resize: vertical; }
+.inv6-rsvp select { appearance: none; }
+.inv6-rsvp input:focus,
+.inv6-rsvp select:focus,
+.inv6-rsvp textarea:focus { border-color: var(--wine); }
+.inv6-rsvp fieldset { margin: 0; padding: 0; border: 0; }
+.inv6-rsvp__choices { display: flex; gap: 27px; margin-top: 14px; }
+.inv6-rsvp__choices label { display: flex; align-items: center; gap: 9px; min-height: 34px; cursor: pointer; }
+.inv6-rsvp__choices input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.inv6-rsvp__choices i { position: relative; box-sizing: border-box; width: 15px; height: 15px; border: 1px solid rgba(101, 30, 34, 0.58); border-radius: 50%; }
+.inv6-rsvp__choices input:checked + i::after { content: ""; position: absolute; inset: 4px; border-radius: 50%; background: var(--wine); }
+.inv6-rsvp__choices label:focus-within i { outline: 1px solid var(--wine); outline-offset: 3px; }
+.inv6-rsvp__choices span { font-size: 15px; }
+.inv6-rsvp__submit { justify-self: end; margin-top: 13px; padding: 12px 0 7px; border: 0; border-bottom: 1px solid currentColor; background: transparent; color: var(--wine); font: 300 8px "Manrope", sans-serif; letter-spacing: 0.3em; text-transform: uppercase; cursor: pointer; }
+.inv6-rsvp__success { margin-top: 70px; text-align: left; }
+.inv6-rsvp__success > span { font-family: "Manrope", sans-serif; font-size: 9px; letter-spacing: 0.35em; color: var(--blush); }
+.inv6-rsvp__success h3 { margin: 23px 0 8px; font-size: 45px; font-weight: 400; color: var(--wine); }
+.inv6-rsvp__success p { margin: 0; font-size: 16px; }
+.inv6-rsvp__success button { margin-top: 25px; padding: 5px 0; border: 0; border-bottom: 1px solid currentColor; background: transparent; color: var(--wine); font: 8px "Manrope", sans-serif; letter-spacing: 0.22em; text-transform: uppercase; cursor: pointer; }
+
+@media (max-width: 430px) { .inv6-rsvp__choices { flex-direction: column; gap: 5px; } }

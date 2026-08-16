@@ -1,0 +1,8 @@
+.inv5-footer { position: relative; isolation: isolate; box-sizing: border-box; min-height: 95svh; display: grid; place-items: center; padding: 120px 24px; overflow: hidden; }
+.inv5-footer__texture { position: absolute; inset: -7%; z-index: -2; background: var(--ivory) url("../../assets/background.png") center / cover no-repeat; }
+.inv5-footer__veil { position: absolute; inset: 0; z-index: -1; background: rgba(253, 252, 249, 0.56); }
+.inv5-footer__content { width: min(100%, 600px); }
+.inv5-footer p { margin: 0 0 55px; font-family: "Bodoni Moda", serif; font-size: clamp(27px, 7vw, 45px); font-style: italic; line-height: 1.45; color: var(--text); }
+.inv5-footer strong { display: block; font-family: "Bodoni Moda", serif; font-size: 30px; font-weight: 400; letter-spacing: 0.3em; color: var(--taupe); }
+.inv5-footer strong i { font-family: "Parisienne", cursive; font-size: 0.78em; font-weight: 400; letter-spacing: 0; color: var(--champagne-dark); }
+.inv5-footer time { display: block; margin-top: 23px; font-family: "Manrope", sans-serif; font-size: 8px; letter-spacing: 0.35em; color: var(--text-soft); }
