@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Parisienne&display=swap");
+
+.invitation-three {
+  --paper: #f8f5ec;
+  --ivory: #fbf9f3;
+  --olive: #74734c;
+  --olive-dark: #55573d;
+  --sage: #939b7c;
+  --green-soft: #aab29a;
+  --berry: #9a6667;
+  --dusty-blue: #6e7c88;
+  --muted-gold: #9b8b5d;
+  --text: #555348;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--paper);
+  color: var(--text);
+  font-family: "EB Garamond", Georgia, serif;
+}
+
+.invitation-three section {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.inv3-content {
+  position: relative;
+  z-index: 2;
+  width: min(calc(100% - 48px), 680px);
+  margin-inline: auto;
+}
+
+.invitation-three [data-inv3-reveal] {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 1.1s ease, transform 1.1s ease;
+  transition-delay: var(--inv3-delay, 0s);
+}
+
+.invitation-three [data-inv3-reveal].inv3-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.inv3-leaf-mark {
+  position: relative;
+  width: 36px;
+  height: 28px;
+  margin-inline: auto;
+}
+
+.inv3-leaf-mark::before,
+.inv3-leaf-mark::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  width: 12px;
+  height: 20px;
+  border: 1px solid rgba(116, 115, 76, 0.68);
+  border-radius: 100% 0 100% 0;
+}
+
+.inv3-leaf-mark::before { left: 4px; transform: rotate(-52deg); }
+.inv3-leaf-mark::after { right: 4px; transform: scaleX(-1) rotate(-52deg); }
+
+.inv3-bee {
+  position: absolute;
+  width: 18px;
+  height: 10px;
+  border-radius: 50%;
+  background: #8b7846;
+  box-shadow: inset 4px 0 #5c5a41, inset -4px 0 #5c5a41;
+  animation: inv3-bee-float 7s ease-in-out infinite;
+}
+
+.inv3-bee::before,
+.inv3-bee::after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  width: 9px;
+  height: 9px;
+  border: 1px solid rgba(102, 113, 101, 0.55);
+  border-radius: 70% 30% 70% 30%;
+  background: rgba(245, 244, 231, 0.6);
+}
+
+.inv3-bee::before { left: 1px; transform: rotate(-24deg); }
+.inv3-bee::after { right: 1px; transform: scaleX(-1) rotate(-24deg); }
+
+@keyframes inv3-bee-float {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-4px) rotate(1deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .invitation-three [data-inv3-reveal] { opacity: 1; transform: none; transition: none; }
+  .inv3-bee { animation: none; }
+}

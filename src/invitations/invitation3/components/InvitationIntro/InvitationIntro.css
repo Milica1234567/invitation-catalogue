@@ -1,0 +1,14 @@
+.inv3-intro { min-height: 75svh; display: flex; align-items: center; padding: 105px 0; background: var(--paper); }
+.inv3-intro p { margin: 0; font-size: clamp(22px, 5.6vw, 32px); font-weight: 400; line-height: 1.65; color: var(--text); }
+.inv3-intro__berry { position: relative; width: 52px; height: 45px; margin: 42px auto 0; }
+.inv3-intro__berry span { position: absolute; left: 25px; top: 5px; width: 1px; height: 36px; background: var(--sage); transform: rotate(23deg); }
+.inv3-intro__berry i { position: absolute; z-index: 1; width: 7px; height: 7px; border-radius: 50%; background: rgba(154, 102, 103, 0.78); }
+.inv3-intro__berry i:nth-child(1) { left: 13px; top: 11px; }
+.inv3-intro__berry i:nth-child(2) { left: 24px; top: 18px; }
+.inv3-intro__berry i:nth-child(3) { left: 31px; top: 7px; }
+.inv3-intro .inv3-bee { right: 7%; bottom: 17%; transform: scale(0.8); }
+
+@media (max-width: 480px) {
+  .inv3-intro p { font-size: 22px; }
+  .inv3-intro .inv3-bee { right: 2%; }
+}

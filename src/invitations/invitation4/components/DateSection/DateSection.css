@@ -1,0 +1,8 @@
+.inv4-date { min-height: 92svh; display: flex; align-items: center; padding: 115px 0; }
+.inv4-date .inv4-content > p { margin: 0 0 43px; font-size: 8px; letter-spacing: 3.3px; text-transform: uppercase; color: var(--muted-gold); }
+.inv4-date__layout { display: flex; flex-direction: column; align-items: center; color: var(--olive-dark); text-transform: uppercase; }
+.inv4-date__layout > span { font-size: 11px; letter-spacing: 5px; }
+.inv4-date__number { width: 100%; display: flex; align-items: center; justify-content: center; gap: 22px; margin: 18px 0 13px; }
+.inv4-date__number i { width: min(15vw, 65px); height: 1px; background: rgba(185, 167, 122, 0.62); }
+.inv4-date__number strong { font-size: clamp(94px, 27vw, 145px); font-weight: 400; line-height: 0.82; letter-spacing: -0.07em; }
+.inv4-date__layout time { margin-top: 17px; font-size: 10px; letter-spacing: 4.5px; }

@@ -1,0 +1,9 @@
+.inv3-footer { position: relative; box-sizing: border-box; min-height: 88svh; display: flex; align-items: center; justify-content: center; padding: 120px 24px 135px; background: var(--paper) url("../../assets/background.png") center bottom / auto 100% no-repeat; }
+.inv3-footer__inner { position: relative; z-index: 1; }
+.inv3-footer p { margin: 0 0 39px; font-size: clamp(22px, 5.5vw, 29px); line-height: 1.55; color: var(--text); }
+.inv3-footer .inv3-leaf-mark { margin-bottom: 38px; }
+.inv3-footer strong { display: block; font-family: "EB Garamond", serif; font-size: 31px; font-weight: 400; letter-spacing: 0.35em; color: var(--olive-dark); }
+.inv3-footer strong i { font-family: "Parisienne", cursive; font-size: 0.8em; font-weight: 400; letter-spacing: 0; color: var(--berry); }
+.inv3-footer time { display: block; margin-top: 21px; font-size: 9px; letter-spacing: 3.2px; color: rgba(77, 79, 57, 0.72); }
+
+@media (min-width: 700px) { .inv3-footer { background-size: 100% auto; } }

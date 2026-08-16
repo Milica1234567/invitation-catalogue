@@ -1,0 +1,8 @@
+.inv4-location { min-height: 80svh; display: flex; align-items: center; padding: 115px 0; }
+.inv4-location .inv4-content > p { margin: 0 0 17px; font-size: 8px; letter-spacing: 3.5px; text-transform: uppercase; color: var(--muted-gold); }
+.inv4-location h2 { margin: 0; font-family: "Bodoni Moda", serif; font-size: clamp(42px, 11vw, 63px); font-weight: 400; color: var(--olive-dark); }
+.inv4-location address { margin: 16px 0 44px; font-size: 15px; font-style: italic; letter-spacing: 1.3px; color: var(--taupe); }
+.inv4-location a { display: inline-flex; align-items: center; gap: 9px; color: var(--olive-dark); font-size: 8px; letter-spacing: 2px; text-decoration: none; text-transform: uppercase; }
+.inv4-location a i { display: block; width: 24px; height: 1px; background: rgba(185, 167, 122, 0.7); }
+.inv4-location a span { font-size: 12px; transition: transform 0.35s ease; }
+.inv4-location a:hover span { transform: translateX(3px); }

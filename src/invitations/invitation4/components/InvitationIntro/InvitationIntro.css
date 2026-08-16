@@ -1,0 +1,2 @@
+.inv4-intro { min-height: 74svh; display: flex; align-items: center; padding: 105px 0; }
+.inv4-intro p { margin: 0 0 43px; font-size: clamp(19px, 5vw, 27px); font-style: italic; line-height: 1.75; color: var(--text); text-shadow: 0 1px 0 rgba(255, 255, 255, 0.55); }
