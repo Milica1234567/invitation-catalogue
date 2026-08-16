@@ -61,7 +61,7 @@ function Header({ revealed }: HeaderProps) {
 
           <a
             className="hero-scroll hero-reveal hero-reveal--scroll"
-            href="#details"
+            href="#plan"
             aria-label="Nastavi na detalje"
           >
             <span />

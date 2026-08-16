@@ -323,7 +323,7 @@
 ========================================= */
 
 .hero.hero--revealed .hero-logo.hero-reveal--logo {
-  animation: logo-reveal 2.4s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards;
+  animation: logo-reveal 3.6s cubic-bezier(0.16, 1, 0.3, 1) 0.675s forwards;
 }
 
 /* =========================================
@@ -331,8 +331,13 @@
    kreće dok logo još završava
 ========================================= */
 
-.hero--revealed .hero-reveal--date {
-  animation: reveal-up 1.6s cubic-bezier(0.16, 1, 0.3, 1) 1.5s forwards;
+.hero.hero--revealed .hero-logo.hero-reveal--logo {
+  animation:
+    logo-reveal
+    4.2s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    1.8s
+    forwards;
 }
 
 /* =========================================
@@ -340,7 +345,7 @@
 ========================================= */
 
 .hero--revealed .hero-reveal--intro {
-  animation: reveal-up 1.7s cubic-bezier(0.16, 1, 0.3, 1) 2s forwards;
+  animation: reveal-up 2.55s cubic-bezier(0.16, 1, 0.3, 1) 3s forwards;
 }
 
 /* =========================================
@@ -348,7 +353,7 @@
 ========================================= */
 
 .hero--revealed .hero-name--ana {
-  animation: ana-reveal 2s cubic-bezier(0.16, 1, 0.3, 1) 2.65s forwards;
+  animation: ana-reveal 3s cubic-bezier(0.16, 1, 0.3, 1) 3.975s forwards;
 }
 
 /* =========================================
@@ -356,7 +361,7 @@
 ========================================= */
 
 .hero--revealed .hero-ampersand {
-  animation: ampersand-reveal 1.5s cubic-bezier(0.16, 1, 0.3, 1) 3.05s forwards;
+  animation: ampersand-reveal 2.25s cubic-bezier(0.16, 1, 0.3, 1) 4.575s forwards;
 }
 
 /* =========================================
@@ -364,7 +369,7 @@
 ========================================= */
 
 .hero--revealed .hero-name--marko {
-  animation: marko-reveal 2s cubic-bezier(0.16, 1, 0.3, 1) 3.3s forwards;
+  animation: marko-reveal 3s cubic-bezier(0.16, 1, 0.3, 1) 4.95s forwards;
 }
 
 /* =========================================
@@ -372,7 +377,7 @@
 ========================================= */
 
 .hero--revealed .hero-reveal--location {
-  animation: reveal-up 1.5s cubic-bezier(0.16, 1, 0.3, 1) 4.1s forwards;
+  animation: reveal-up 2.25s cubic-bezier(0.16, 1, 0.3, 1) 6.15s forwards;
 }
 
 /* =========================================
@@ -380,7 +385,7 @@
 ========================================= */
 
 .hero--revealed .hero-reveal--scroll {
-  animation: reveal-up 1.4s cubic-bezier(0.16, 1, 0.3, 1) 4.5s forwards;
+  animation: reveal-up 2.1s cubic-bezier(0.16, 1, 0.3, 1) 6.75s forwards;
 }
 
 /* =========================================================
@@ -406,6 +411,11 @@
     opacity: 0.2;
 
     filter: blur(4px);
+  }
+   40% {
+    opacity: 0.4;
+
+    filter: blur(3px);
   }
 
   56% {
@@ -531,7 +541,7 @@
 ========================================= */
 
 .hero--revealed .hero-scroll span {
-  animation: scroll-arrow 2.2s ease-in-out 5.7s infinite;
+  animation: scroll-arrow 3.3s ease-in-out 8.55s infinite;
 }
 
 @keyframes scroll-arrow {

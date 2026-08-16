@@ -2,8 +2,11 @@ import { useState } from "react";
 
 import DoorIntro from "./components/DoorIntro/DoorIntro";
 import Header from "./components/Header/Header";
+import Countdown from "./components/Countdown/Countdown";
+import PlanOfDay from "./components/PlanOfDay/PlanOfDay";
+import RSVP from "./components/RSVP/RSVP";
 
-function Invitation2() {
+function Invitation1() {
   const [invitationOpened, setInvitationOpened] = useState(false);
 
   return (
@@ -14,9 +17,12 @@ function Invitation2() {
 
       <main>
         <Header revealed={invitationOpened} />
+        <Countdown />
+        <PlanOfDay />
+        <RSVP />
       </main>
     </>
   );
 }
 
-export default Invitation2;
+export default Invitation1;
