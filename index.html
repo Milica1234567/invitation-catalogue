@@ -5,6 +5,26 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>catalogue</title>
+    <script>
+      // Restore a client-side route redirected here by GitHub Pages' 404 page.
+      (function (location) {
+        if (location.search.charAt(1) !== "/") return;
+
+        var route = location.search
+          .slice(1)
+          .split("&")
+          .map(function (part) {
+            return part.replace(/~and~/g, "&");
+          })
+          .join("?");
+
+        window.history.replaceState(
+          null,
+          "",
+          location.pathname.slice(0, -1) + route + location.hash,
+        );
+      })(window.location);
+    </script>
   </head>
   <body>
     <div id="root"></div>
