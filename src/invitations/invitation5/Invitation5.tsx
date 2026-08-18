@@ -5,6 +5,7 @@ import Hero from "./components/Hero/Hero";
 import InvitationIntro from "./components/InvitationIntro/InvitationIntro";
 import DateEditorial from "./components/DateEditorial/DateEditorial";
 import Schedule from "./components/Schedule/Schedule";
+import Countdown from "./components/Countdown/Countdown";
 import Location from "./components/Location/Location";
 import RSVP from "./components/RSVP/RSVP";
 import Footer from "./components/Footer/Footer";
@@ -30,6 +31,7 @@ function Invitation5() {
       <InvitationIntro />
       <DateEditorial />
       <Schedule />
+      <Countdown />
       <Location />
       <RSVP />
       <Footer />

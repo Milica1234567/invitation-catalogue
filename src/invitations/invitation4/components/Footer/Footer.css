@@ -1,4 +1,4 @@
-.inv4-footer { position: relative; box-sizing: border-box; min-height: 90svh; display: flex; align-items: center; justify-content: center; padding: 120px 50px 135px; background: var(--ivory) url("../../assets/background.png") center / 100% 100% no-repeat; }
+.inv4-footer { position: relative; box-sizing: border-box; min-height: 90svh; display: flex; align-items: center; justify-content: center; padding: 120px 50px 135px; }
 .inv4-footer__inner { width: min(100%, 520px); }
 .inv4-footer p { margin: 0 0 43px; font-size: clamp(19px, 5vw, 26px); font-style: italic; line-height: 1.65; color: var(--text); }
 .inv4-footer strong { display: block; margin-top: 39px; font-family: "Bodoni Moda", serif; font-size: 24px; font-weight: 400; letter-spacing: 0.35em; color: var(--olive-dark); }

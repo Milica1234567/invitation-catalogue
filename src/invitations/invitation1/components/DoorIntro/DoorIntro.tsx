@@ -3,6 +3,7 @@ import "./DoorIntro.css";
 
 import waxseal from "../../assets/waxsealAM.png";
 import backgroundDoor from "../../assets/backgroundDoor.png";
+import backgroundDetails from "../../assets/background.png";
 
 type DoorIntroProps = {
   onOpen?: () => void;
@@ -36,12 +37,24 @@ function DoorIntro({ onOpen }: DoorIntroProps) {
           alt=""
           aria-hidden="true"
         />
+        <img
+          className="door-details"
+          src={backgroundDetails}
+          alt=""
+          aria-hidden="true"
+        />
       </div>
 
       <div className="door door-right">
         <img
           className="door-background"
           src={backgroundDoor}
+          alt=""
+          aria-hidden="true"
+        />
+        <img
+          className="door-details"
+          src={backgroundDetails}
           alt=""
           aria-hidden="true"
         />

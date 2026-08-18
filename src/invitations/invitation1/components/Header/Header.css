@@ -15,8 +15,7 @@
       circle at 50% 38%,
       rgba(255, 255, 255, 0.4),
       transparent 48%
-    ),
-    #eee7dc;
+    );
 
   color: #6d6255;
 }

@@ -5,6 +5,7 @@ import Hero from "./components/Hero/Hero";
 import PhotoIntro from "./components/PhotoIntro/PhotoIntro";
 import InvitationMessage from "./components/InvitationMessage/InvitationMessage";
 import WeddingDetails from "./components/WeddingDetails/WeddingDetails";
+import Countdown from "./components/Countdown/Countdown";
 import PhotoStory from "./components/PhotoStory/PhotoStory";
 import Location from "./components/Location/Location";
 import RSVP from "./components/RSVP/RSVP";
@@ -31,6 +32,7 @@ function Invitation6() {
       <PhotoIntro />
       <InvitationMessage />
       <WeddingDetails />
+      <Countdown />
       <PhotoStory />
       <Location />
       <RSVP />

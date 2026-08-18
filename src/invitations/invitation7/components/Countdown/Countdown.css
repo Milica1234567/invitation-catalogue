@@ -1,0 +1,31 @@
+.inv7-countdown {
+  min-height: 58svh;
+  display: flex;
+  align-items: center;
+  padding: 95px 0 85px;
+  background: var(--wine);
+  color: var(--ivory);
+}
+
+.inv7-countdown::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.18;
+  background: url("../../assets/background.png") center / cover no-repeat;
+}
+
+.inv7-countdown .inv7-content { width: min(calc(100% - 36px), 650px); }
+.inv7-countdown p { margin: 0 0 50px; font-family: var(--font-body); font-size: 8px; font-weight: 300; letter-spacing: 0.36em; text-transform: uppercase; color: rgba(247, 240, 228, 0.68); }
+.inv7-countdown h2 { margin: 0; font-family: var(--font-display); font-size: clamp(38px, 10vw, 59px); font-weight: 400; color: var(--ivory); }
+.inv7-countdown__grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+.inv7-countdown__unit { position: relative; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.inv7-countdown__unit + .inv7-countdown__unit::before { content: ""; position: absolute; top: 4px; bottom: 3px; left: 0; width: 1px; background: rgba(247, 240, 228, 0.18); }
+.inv7-countdown__unit strong { min-width: 2ch; font-family: var(--font-display); font-size: clamp(34px, 10vw, 59px); font-weight: 400; line-height: 1; font-variant-numeric: tabular-nums; color: var(--cream); }
+.inv7-countdown__unit span { font-family: var(--font-body); font-size: clamp(7px, 1.8vw, 9px); font-weight: 300; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(247, 240, 228, 0.62); }
+
+@media (max-width: 380px) {
+  .inv7-countdown .inv7-content { width: min(calc(100% - 22px), 650px); }
+  .inv7-countdown__unit { gap: 9px; }
+  .inv7-countdown__unit span { letter-spacing: 0.15em; }
+}

@@ -8,9 +8,10 @@
 
   overflow: hidden;
 
-  perspective: 1200px;
+  perspective: 1500px;
+  perspective-origin: 50% 48%;
 
-  background: #eee7dc;;
+  background: #e9dfd0;
 }
 
 /* =========================
@@ -29,11 +30,14 @@
   transform-style: preserve-3d;
   backface-visibility: hidden;
 
-  background: #eee7dc;;
+  background: #e9dfd0;
+
+  transform: translateZ(0);
 
   transition:
-    transform 2.4s cubic-bezier(0.65, 0, 0.35, 1),
-    filter 2.4s ease;
+    transform 2.15s cubic-bezier(0.65, 0, 0.25, 1),
+    filter 2.15s ease,
+    box-shadow 2.15s ease;
 
   will-change: transform;
 }
@@ -46,7 +50,7 @@
   transform-origin: left center;
 
   box-shadow:
-    inset -2px 0 4px rgba(70, 55, 40, 0.08);
+    inset -3px 0 8px rgba(70, 55, 40, 0.1);
 }
 
 /* DESNO */
@@ -57,7 +61,7 @@
   transform-origin: right center;
 
   box-shadow:
-    inset 2px 0 4px rgba(70, 55, 40, 0.08);
+    inset 3px 0 8px rgba(70, 55, 40, 0.1);
 }
 
 /* =========================
@@ -66,18 +70,15 @@
 
 .door-background {
   position: absolute;
-  inset: 0;
+  top: 0;
 
   display: block;
 
-  width: 100%;
+  width: 200%;
   height: 100%;
 
-  /*
-    Cela embossing slika ostaje vidljiva.
-    Namerno je rastegnuta na proporcije krila.
-  */
-  object-fit: fill;
+  object-fit: cover;
+  object-position: center;
 
   pointer-events: none;
   user-select: none;
@@ -85,10 +86,66 @@
   -webkit-user-drag: none;
 }
 
-/* desno krilo je mirror */
+.door-left .door-background {
+  left: 0;
+}
 
 .door-right .door-background {
-  transform: scaleX(-1);
+  right: 0;
+}
+
+/* Providni reljefni detalji ostaju diskretni preko postojeće teksture papira. */
+
+.door-details {
+  position: absolute;
+  top: 0;
+
+  display: block;
+
+  width: 200%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  opacity: 0.24;
+  mix-blend-mode: soft-light;
+
+  pointer-events: none;
+  user-select: none;
+
+  -webkit-user-drag: none;
+}
+
+.door-left .door-details {
+  left: 0;
+}
+
+.door-right .door-details {
+  right: 0;
+}
+
+/* Tanka unutrašnja bordura povezuje oba krila u jedan komad papira. */
+
+.door::before {
+  content: "";
+
+  position: absolute;
+  inset: 15px;
+
+  z-index: 1;
+
+  border: 1px solid rgba(132, 112, 78, 0.22);
+
+  pointer-events: none;
+}
+
+.door-left::before {
+  border-right: 0;
+}
+
+.door-right::before {
+  border-left: 0;
 }
 
 /* =========================
@@ -103,7 +160,7 @@
   top: 0;
   bottom: 0;
 
-  width: 5px;
+  width: 8px;
 
   z-index: 2;
 
@@ -115,7 +172,7 @@
 
   background: linear-gradient(
     to left,
-    rgba(70, 55, 40, 0.1),
+    rgba(70, 55, 40, 0.13),
     transparent
   );
 }
@@ -125,7 +182,7 @@
 
   background: linear-gradient(
     to right,
-    rgba(70, 55, 40, 0.1),
+    rgba(70, 55, 40, 0.13),
     transparent
   );
 }
@@ -179,6 +236,8 @@
   user-select: none;
 
   -webkit-user-drag: none;
+
+  filter: drop-shadow(0 5px 7px rgba(58, 48, 35, 0.18));
 }
 
 /* =========================
@@ -242,15 +301,19 @@
 ========================= */
 
 .opened .door-left {
-  transform: rotateY(-108deg);
+  transform: rotateY(-112deg);
 
-  filter: brightness(0.94);
+  filter: brightness(0.92) saturate(0.94);
+
+  box-shadow: 14px 0 30px rgba(53, 41, 29, 0.14);
 }
 
 .opened .door-right {
-  transform: rotateY(108deg);
+  transform: rotateY(112deg);
 
-  filter: brightness(0.94);
+  filter: brightness(0.92) saturate(0.94);
+
+  box-shadow: -14px 0 30px rgba(53, 41, 29, 0.14);
 }
 
 .opened .seal {
@@ -280,7 +343,11 @@
 
 @media (max-width: 600px) {
   .door-intro {
-    perspective: 1000px;
+    perspective: 1200px;
+  }
+
+  .door::before {
+    inset: 10px;
   }
 
   .seal {

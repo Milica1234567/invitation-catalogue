@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./Invitation1.css";
 
 import DoorIntro from "./components/DoorIntro/DoorIntro";
 import Header from "./components/Header/Header";
@@ -15,7 +16,7 @@ function Invitation1() {
         onOpen={() => setInvitationOpened(true)}
       />
 
-      <main>
+      <main className="invitation1-page">
         <Header revealed={invitationOpened} />
         <Countdown />
         <PlanOfDay />

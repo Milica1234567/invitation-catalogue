@@ -1,4 +1,4 @@
-.inv4-hero { min-height: 100svh; display: grid; place-items: center; padding: 68px 50px 56px; background: var(--ivory) url("../../assets/background.png") center / 100% 100% no-repeat; }
+.inv4-hero { min-height: 100svh; display: grid; place-items: center; padding: 68px 50px 56px; }
 .inv4-hero__inner { width: min(100%, 530px); }
 .inv4-hero__monogram { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 48px; font-size: 13px; letter-spacing: 3px; color: var(--olive-dark); }
 .inv4-hero__monogram i { font-size: 11px; font-style: normal; color: var(--muted-gold); }
