@@ -1,0 +1,49 @@
+.scroll-bloom-sequence {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: var(--bloom-sequence-opacity, 0.72);
+  contain: strict;
+}
+
+.scroll-bloom-sequence__canvas,
+.scroll-bloom-sequence__poster {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.scroll-bloom-sequence__canvas {
+  z-index: 1;
+}
+
+.scroll-bloom-sequence__poster {
+  z-index: 2;
+  object-fit: cover;
+  object-position: 68% center;
+  transition: opacity 180ms ease;
+}
+
+.scroll-bloom-sequence__poster--hidden {
+  opacity: 0;
+}
+
+@media (max-width: 700px) {
+  .scroll-bloom-sequence {
+    opacity: min(var(--bloom-sequence-opacity, 0.72), 0.5);
+  }
+
+  .scroll-bloom-sequence__poster {
+    object-position: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-bloom-sequence__poster {
+    transition: none;
+  }
+}

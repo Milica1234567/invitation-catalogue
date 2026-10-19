@@ -1,0 +1,386 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400&display=swap");
+
+.invitation-eight {
+  --ivory: #fbf7f2;
+  --paper: rgba(255, 251, 247, 0.79);
+  --rose: #9d6e6d;
+  --ink: #554a46;
+  --green: #596d5c;
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  overflow: clip;
+  background: var(--ivory);
+  color: var(--ink);
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color-scheme: light;
+}
+
+.invitation-eight::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(251, 247, 242, 0.2), transparent 44%, rgba(251, 247, 242, 0.08));
+}
+
+.invitation-eight__section {
+  position: relative;
+  z-index: 2;
+  min-height: 100svh;
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  padding: 88px clamp(22px, 6vw, 80px);
+}
+
+.invitation-eight__card {
+  width: min(100%, 550px);
+  box-sizing: border-box;
+  padding: clamp(36px, 7vw, 72px);
+  border: 1px solid rgba(157, 110, 109, 0.18);
+  background: var(--paper);
+  box-shadow: 0 24px 70px rgba(86, 66, 60, 0.08);
+  backdrop-filter: blur(4px);
+}
+
+.invitation-eight__hero {
+  justify-items: start;
+}
+
+.invitation-eight__hero-card {
+  width: min(100%, 620px);
+  text-align: center;
+}
+
+.invitation-eight__eyebrow {
+  margin: 0 0 24px;
+  color: var(--green);
+  font-size: 10px;
+  letter-spacing: 0.31em;
+  text-transform: uppercase;
+}
+
+.invitation-eight h1,
+.invitation-eight h2,
+.invitation-eight h3 {
+  font-family: "Cormorant Garamond", serif;
+  color: var(--ink);
+  font-weight: 400;
+}
+
+.invitation-eight h1 {
+  margin: 0;
+  font-size: clamp(62px, 10vw, 105px);
+  line-height: 0.76;
+  letter-spacing: -0.055em;
+}
+
+.invitation-eight h1 span {
+  display: block;
+  margin: 0.25em 0 0.18em;
+  color: var(--rose);
+  font-size: 0.48em;
+  font-style: italic;
+}
+
+.invitation-eight h2 {
+  margin: 0 0 26px;
+  font-size: clamp(45px, 7vw, 70px);
+  line-height: 0.95;
+}
+
+.invitation-eight h3 {
+  margin: 0 0 3px;
+  font-size: 25px;
+}
+
+.invitation-eight__rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 36px auto 22px;
+}
+
+.invitation-eight__rule::before,
+.invitation-eight__rule::after {
+  content: "";
+  width: 60px;
+  height: 1px;
+  background: rgba(157, 110, 109, 0.4);
+}
+
+.invitation-eight__rule i {
+  width: 6px;
+  height: 6px;
+  border: 1px solid var(--rose);
+  transform: rotate(45deg);
+}
+
+.invitation-eight__date {
+  margin: 0;
+  color: var(--rose);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 27px;
+  letter-spacing: 0.18em;
+}
+
+.invitation-eight__place {
+  margin: 8px 0 38px;
+  font-size: 10px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+
+.invitation-eight__scroll {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  color: var(--green);
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.invitation-eight__scroll span {
+  font-size: 17px;
+}
+
+.invitation-eight__story,
+.invitation-eight__details,
+.invitation-eight__rsvp {
+  justify-items: end;
+}
+
+.invitation-eight__copy {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 23px;
+  line-height: 1.55;
+}
+
+.invitation-eight__signature {
+  margin: 28px 0 0;
+  color: var(--rose);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  font-style: italic;
+}
+
+.invitation-eight__timeline {
+  position: relative;
+  display: grid;
+  gap: 26px;
+  margin: 42px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.invitation-eight__timeline::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 51px;
+  width: 1px;
+  background: rgba(89, 109, 92, 0.25);
+}
+
+.invitation-eight__timeline li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  gap: 24px;
+  text-align: left;
+}
+
+.invitation-eight__timeline li::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 47px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--rose);
+  box-shadow: 0 0 0 5px rgba(157, 110, 109, 0.12);
+}
+
+.invitation-eight__timeline time {
+  color: var(--green);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+.invitation-eight__timeline p {
+  margin: 0;
+  color: rgba(85, 74, 70, 0.72);
+  font-size: 12px;
+}
+
+.invitation-eight__button {
+  display: inline-flex;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: 190px;
+  padding: 14px 24px;
+  border: 1px solid var(--rose);
+  background: transparent;
+  color: var(--rose);
+  font: 400 10px/1 "Montserrat", sans-serif;
+  letter-spacing: 0.22em;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 180ms ease;
+}
+
+.invitation-eight__button:hover,
+.invitation-eight__button:focus-visible {
+  background: var(--rose);
+  color: white;
+}
+
+.invitation-eight form {
+  display: grid;
+  gap: 24px;
+  margin-top: 38px;
+}
+
+.invitation-eight label {
+  display: grid;
+  gap: 8px;
+  color: var(--green);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.invitation-eight input,
+.invitation-eight select,
+.invitation-eight textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  border-bottom: 1px solid rgba(89, 109, 92, 0.32);
+  border-radius: 0;
+  padding: 8px 2px 11px;
+  outline: none;
+  background: transparent;
+  color: var(--ink);
+  font: 18px "Cormorant Garamond", serif;
+}
+
+.invitation-eight textarea {
+  resize: vertical;
+}
+
+.invitation-eight input:focus,
+.invitation-eight select:focus,
+.invitation-eight textarea:focus {
+  border-color: var(--rose);
+}
+
+.invitation-eight__thanks {
+  margin-top: 38px;
+  color: var(--rose);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 22px;
+}
+
+.invitation-eight__thanks span {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.invitation-eight__thanks button {
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  background: transparent;
+  color: var(--green);
+  font: 9px "Montserrat", sans-serif;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.invitation-eight__footer {
+  position: relative;
+  z-index: 2;
+  min-height: 46svh;
+  display: grid;
+  place-content: center;
+  gap: 12px;
+  padding: 60px 24px;
+  background: rgba(89, 109, 92, 0.88);
+  color: #fffaf5;
+}
+
+.invitation-eight__footer span {
+  font: italic 54px "Cormorant Garamond", serif;
+}
+
+.invitation-eight__footer p {
+  margin: 0;
+  font-size: 9px;
+  letter-spacing: 0.23em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 700px) {
+  .invitation-eight::before {
+    background: rgba(251, 247, 242, 0.08);
+  }
+
+  .invitation-eight__section {
+    min-height: 112svh;
+    padding: 62px 18px;
+  }
+
+  .invitation-eight__hero,
+  .invitation-eight__story,
+  .invitation-eight__details,
+  .invitation-eight__rsvp {
+    justify-items: center;
+  }
+
+  .invitation-eight__card {
+    padding: 38px 25px;
+    background: rgba(255, 251, 247, 0.82);
+    backdrop-filter: blur(2px);
+  }
+
+  .invitation-eight h1 {
+    font-size: clamp(58px, 19vw, 82px);
+  }
+
+  .invitation-eight__timeline li {
+    grid-template-columns: 66px 1fr;
+    gap: 16px;
+  }
+
+  .invitation-eight__timeline::before {
+    left: 45px;
+  }
+
+  .invitation-eight__timeline li::before {
+    left: 41px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .invitation-eight {
+    scroll-behavior: auto;
+  }
+
+  .invitation-eight__button {
+    transition: none;
+  }
+}
