@@ -8,6 +8,7 @@ import Invitation5 from "./invitations/invitation5/Invitation5";
 import Invitation6 from "./invitations/invitation6/Invitation6";
 import Invitation7 from "./invitations/invitation7/Invitation7";
 import Invitation8 from "./invitations/invitation8/Invitation8";
+import Invitation9 from "./invitations/invitation9/Invitation9";
 
 function App() {
   return (
@@ -49,6 +50,11 @@ function App() {
       <Route
         path="/invitation-catalogue/invitation8"
         element={<Invitation8 />}
+      />
+
+      <Route
+        path="/invitation-catalogue/invitation9"
+        element={<Invitation9 />}
       />
     </Routes>
   );

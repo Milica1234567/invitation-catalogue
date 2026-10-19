@@ -70,6 +70,11 @@ function Home() {
           <h2>Invitation 8</h2>
           <p>Pogledaj pozivnicu</p>
         </Link>
+
+        <Link to="/invitation-catalogue/invitation9" className="home__card">
+          <h2>Invitation 9</h2>
+          <p>Pogledaj pozivnicu</p>
+        </Link>
       </div>
     </main>
   );
