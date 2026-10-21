@@ -1,0 +1,14 @@
+.home__card--anime {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background: linear-gradient(125deg, #32105f 0 49%, #f17416 51% 100%);
+}
+
+.home__card--anime h2,
+.home__card--anime p { position: relative; z-index: 2; color: #fff; }
+.home__anime-preview { position: absolute; inset: 0; opacity: .7; }
+.home__anime-preview::after { content: ""; position: absolute; inset: 15%; border-radius: 50%; background: white; filter: blur(25px); opacity: .35; }
+.home__anime-preview i, .home__anime-preview b { position: absolute; width: 90px; height: 90px; border-radius: 50%; filter: blur(18px); animation: home-anime-pulse 2.4s ease-in-out infinite alternate; }
+.home__anime-preview i { left: -20px; bottom: -20px; background: #ff3be5; }.home__anime-preview b { right: -20px; top: -20px; background: #ffd22e; animation-delay: -.8s; }
+@keyframes home-anime-pulse { to { transform: scale(1.35); opacity: .55; } }

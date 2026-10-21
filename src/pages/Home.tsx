@@ -75,6 +75,12 @@ function Home() {
           <h2>Invitation 9</h2>
           <p>Pogledaj pozivnicu</p>
         </Link>
+
+        <Link to="/invitation-catalogue/invitation10" className="home__card home__card--anime">
+          <span className="home__anime-preview" aria-hidden="true"><i /><b /></span>
+          <h2>Epic Birthday</h2>
+          <p>HUNTR/X × Dragon Ball</p>
+        </Link>
       </div>
     </main>
   );

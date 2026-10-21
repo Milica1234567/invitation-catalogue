@@ -1,0 +1,4 @@
+import EnergyParticles from "./EnergyParticles";
+import { birthdayConfig as config } from "../birthdayConfig";
+function FinalScene() { return <footer className="i10-final"><EnergyParticles /><img className="i10-final__clouds" src={config.assets.clouds} alt="" /><img className="i10-final__dragon" src={config.assets.dragon} alt="" /><img className="i10-final__petals" src={config.assets.sakuraPetals} alt="" /><div className="i10-final__collision" /><div><span>Final episode</span><h2>Dve priče. Dva slavljenika.<br />Jedna nezaboravna avantura!</h2><p>Čekamo te da zajedno napravimo uspomene!</p></div></footer>; }
+export default FinalScene;
