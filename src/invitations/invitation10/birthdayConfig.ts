@@ -12,7 +12,8 @@ import goku from "./assets/transparent/goku.png";
 import huntrixBackground from "./assets/transparent/huntrix-background.png";
 import huntrixCat from "./assets/transparent/huntrix-cat.png";
 import huntrixLogo from "./assets/transparent/huntrix-logo.png";
-import icons from "./assets/transparent/icons.png";
+import calendar from "./assets/transparent/calendar.png";
+import clock from "./assets/transparent/clock.png";
 import lightning from "./assets/transparent/lightning.png";
 import neonElements from "./assets/transparent/neon-elements.png";
 import rumi from "./assets/transparent/rumi.png";
@@ -24,8 +25,8 @@ export const birthdayConfig = {
   daughterAge: 4,
   fatherName: "Milan",
   fatherAge: 40,
-  dateTime: "2027-06-20T17:00:00+02:00",
-  displayDate: "20. JUN 2027.",
+  dateTime: "2026-12-30T17:00:00+01:00",
+  displayDate: "30.12.2026.",
   time: "17:00",
   location: "Igraonica Tom i Džeri",
   address: "Obrenovački put 117, Barič",
@@ -49,7 +50,8 @@ export const birthdayConfig = {
     frameRight,
     huntrixCat,
     huntrixLogo,
-    icons,
+    calendar,
+    clock,
     lightning,
     neonElements,
     sakuraPetals,

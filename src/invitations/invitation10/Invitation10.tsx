@@ -5,7 +5,6 @@ import {
   BirthdayDetails,
   BirthdayCountdown,
 } from "./components/DetailsCountdown";
-import TeamSelector from "./components/TeamSelector";
 import RSVP from "./components/RSVP";
 import FinalScene from "./components/FinalScene";
 import "./Invitation10.css";
@@ -25,7 +24,6 @@ function Invitation10() {
       <Hero />
       <BirthdayDetails />
       <BirthdayCountdown />
-      <TeamSelector />
       <RSVP />
       <FinalScene />
     </main>
