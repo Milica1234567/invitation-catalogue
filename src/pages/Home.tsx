@@ -81,6 +81,11 @@ function Home() {
           <h2>Epic Birthday</h2>
           <p>HUNTR/X × Dragon Ball</p>
         </Link>
+
+        <Link to="/invitation-catalogue/invitation11" className="home__card">
+          <h2>Jelena &amp; Aleksandar</h2>
+          <p>Watercolor wedding</p>
+        </Link>
       </div>
     </main>
   );
