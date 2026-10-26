@@ -1,15 +1,12 @@
 import { useState } from "react";
-import type { FormEvent } from "react";
+import { useRsvp } from "../../../../rsvp/useRsvp";
 import "./RSVP.css";
 
 function RSVP() {
   const [attendance, setAttendance] = useState<"yes" | "no">("yes");
-  const [submitted, setSubmitted] = useState(false);
+  const { submitted, setSubmitted, status, message, submit } = useRsvp("invitation5");
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setSubmitted(true);
-  }
+  const handleSubmit = submit;
 
   return (
     <section className="inv5-rsvp" aria-labelledby="inv5-rsvp-title">
@@ -19,7 +16,7 @@ function RSVP() {
           <p>Molimo vas da svoj dolazak<br />potvrdite do 20. juna 2027.</p>
         </header>
         {submitted ? (
-          <div className="inv5-rsvp__success" role="status"><span>S &amp; A</span><h3>Hvala vam.</h3><p>Vaš odgovor je zabeležen.</p><button type="button" onClick={() => setSubmitted(false)}>Izmeni odgovor</button></div>
+          <div className="inv5-rsvp__success" role="status"><span>S &amp; A</span><h3>Hvala vam.</h3><p>Vaš odgovor je zabeležen.</p><button type="button" onClick={() => setSubmitted()}>Izmeni odgovor</button></div>
         ) : (
           <form onSubmit={handleSubmit} data-inv5-reveal>
             <label className="inv5-rsvp__field"><span>Ime i prezime</span><input name="name" type="text" autoComplete="name" required /></label>
@@ -29,7 +26,8 @@ function RSVP() {
             </div></fieldset>
             {attendance === "yes" && <label className="inv5-rsvp__field"><span>Broj gostiju</span><select name="guests" defaultValue="1"><option value="1">1 gost</option><option value="2">2 gosta</option><option value="3">3 gosta</option><option value="4">4 gosta</option></select></label>}
             <label className="inv5-rsvp__field"><span>Poruka mladencima</span><textarea name="message" rows={3} /></label>
-            <button className="inv5-rsvp__submit" type="submit">Potvrdi dolazak</button>
+            <button className="inv5-rsvp__submit" type="submit" disabled={status === "loading"}>{status === "loading" ? "Šaljemo…" : "Potvrdi dolazak"}</button>
+            {message && <p role={status === "error" ? "alert" : "status"}>{message}</p>}
           </form>
         )}
       </div>

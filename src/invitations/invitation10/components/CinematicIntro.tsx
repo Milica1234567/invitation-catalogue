@@ -18,7 +18,6 @@ function CinematicIntro({ visible, onComplete }: CinematicIntroProps) {
     <motion.div className="i10-intro__character i10-intro__character--left" initial={{ opacity: 0, x: -80 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: reduced ? 0 : .65, duration: .8 }}><CharacterVisual side="huntrix" src={config.assets.rumi} label="Rumi inspirisana junakinja" /></motion.div>
     <motion.div className="i10-intro__character i10-intro__character--right" initial={{ opacity: 0, x: 80 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: reduced ? 0 : .65, duration: .8 }}><CharacterVisual side="dragon" src={config.assets.goku} label="Goku inspirisan junak" /></motion.div>
     <motion.div className="i10-collision" initial={{ scale: 0, opacity: 0 }} animate={{ scale: [0, 1.3, .85], opacity: [0, 1, .75] }} transition={{ delay: reduced ? 0 : 1.25, duration: 1.25 }} />
-    <img className="i10-intro__divider" src={config.assets.divider} alt="" />
     <motion.div className="i10-intro__copy" initial={{ opacity: 0, scale: .9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: reduced ? 0 : 1.75 }}><span>TWO WORLDS</span><strong>ONE EPIC BIRTHDAY</strong><button type="button" onClick={onComplete}>Uđi u avanturu</button></motion.div>
     <button className="i10-intro__skip" type="button" onClick={onComplete}>Skip intro</button>
   </motion.div>}</AnimatePresence>;

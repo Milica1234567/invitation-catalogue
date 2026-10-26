@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { FormEvent } from "react";
+import { useRsvp } from "../../../../rsvp/useRsvp";
 
 import "./RSVP.css";
 
@@ -7,12 +7,9 @@ type Attendance = "yes" | "no";
 
 function RSVP() {
   const [attendance, setAttendance] = useState<Attendance>("yes");
-  const [submitted, setSubmitted] = useState(false);
+  const { submitted, setSubmitted, status, message, submit } = useRsvp("invitation1");
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setSubmitted(true);
-  }
+  const handleSubmit = submit;
 
   return (
     <section className="rsvp" id="details" aria-labelledby="rsvp-title">
@@ -34,7 +31,7 @@ function RSVP() {
             <span className="rsvp-success__mark" aria-hidden="true">A&amp;M</span>
             <h3>Hvala Vam</h3>
             <p>Vaš odgovor je zabeležen.</p>
-            <button type="button" onClick={() => setSubmitted(false)}>
+            <button type="button" onClick={() => setSubmitted()}>
               Izmeni odgovor
             </button>
           </div>
@@ -88,7 +85,8 @@ function RSVP() {
               <textarea name="message" rows={3} />
             </label>
 
-            <button className="rsvp-submit" type="submit">Pošalji odgovor</button>
+            <button className="rsvp-submit" type="submit" disabled={status === "loading"}>{status === "loading" ? "Šaljemo…" : "Pošalji odgovor"}</button>
+            {message && <p role={status === "error" ? "alert" : "status"}>{message}</p>}
           </form>
         )}
       </div>

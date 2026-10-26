@@ -33,9 +33,8 @@ body.i10-intro-open { overflow: hidden; }
 .i10-hero { position:relative; min-height:100svh; display:grid; place-items:center; overflow:hidden; isolation:isolate; padding:80px 20px 55px; background:#0a0718; }
 .i10-hero__half { position:absolute; inset-block:0; width:52%; z-index:-2; }.i10-hero__half--left { left:0; background:radial-gradient(circle at 55% 25%,#c82fff66,transparent 20%),linear-gradient(155deg,#090516,#471078 55%,#170b32); clip-path:polygon(0 0,100% 0,86% 100%,0 100%); }.i10-hero__half--right { right:0; background:radial-gradient(circle at 35% 28%,#ffe32966,transparent 20%),linear-gradient(205deg,#0956ac,#ef6518 62%,#2d1633); clip-path:polygon(14% 0,100% 0,100% 100%,0 100%); }
 .i10-hero__background { position:absolute; inset:0; z-index:-1; width:100%; height:100%; object-fit:cover; }
-.i10-hero__character { position:absolute; bottom:-4%; width:min(34vw,390px); height:76%; opacity:.5; }.i10-hero__character--left { left:-2%; }.i10-hero__character--right { right:-2%; }
-.i10-hero__content { position:relative; z-index:3; width:min(100%,850px); text-align:center; }.i10-hero__content > p { margin-bottom:13px; color:#fff6b9; font:600 11px "Barlow Condensed"; letter-spacing:.35em; text-transform:uppercase; }.i10-hero h1 { margin:0; font:400 clamp(56px,10vw,112px)/.82 "Bangers"; letter-spacing:.035em; text-transform:uppercase; text-shadow:4px 5px 0 #171022,0 0 25px #ff35d388; }.i10-hero h1 span { color:#ffe340; text-shadow:4px 5px 0 #422206,0 0 24px #ff8c22; }.i10-hero h2 { margin:30px 0 5px; font:700 clamp(25px,5vw,52px) "Barlow Condensed"; text-transform:uppercase; }.i10-hero h2 i { color:#fff; font-style:normal; }.i10-hero__content > strong { color:#ffec80; font:600 12px "Outfit"; letter-spacing:.28em; text-transform:uppercase; }
-.i10-ages { display:flex; justify-content:center; gap:12px; margin:24px 0 31px; flex-wrap:wrap; }.i10-ages span { padding:8px 14px; border:1px solid rgba(255,255,255,.35); border-radius:999px; background:rgba(7,4,22,.45); font-size:11px; backdrop-filter:blur(7px); }
+.i10-hero__character { position:absolute; z-index:2; bottom:-2%; width:min(40vw,470px); height:82%; opacity:1; }.i10-hero__character--left { left:-1%; }.i10-hero__character--right { right:-1%; }
+.i10-hero__content { position:relative; z-index:3; width:min(100%,850px); text-align:center; }.i10-hero__content > p { margin-bottom:13px; color:#fff6b9; font:600 11px "Barlow Condensed"; letter-spacing:.35em; text-transform:uppercase; }.i10-hero h1 { margin:0; color:#fff; font:400 clamp(56px,10vw,112px)/.82 "Bangers"; letter-spacing:.035em; text-transform:uppercase; text-shadow:2px 3px 0 rgba(10,5,24,.92); }.i10-hero h1 span { color:#ffe340; text-shadow:2px 3px 0 rgba(66,34,6,.92); }.i10-hero h2 { margin:30px 0 5px; font:700 clamp(25px,5vw,52px) "Barlow Condensed"; text-transform:uppercase; }.i10-hero h2 i { color:#fff; font-style:normal; }.i10-hero__content > strong { color:#ffec80; font:600 12px "Outfit"; letter-spacing:.28em; text-transform:uppercase; }.i10-hero__content > a { margin-top:30px; }
 .i10-hero a,.i10-details a { display:inline-flex; align-items:center; gap:9px; padding:14px 23px; border:1px solid #fff8; background:#09051999; color:#fff; font:700 10px "Outfit"; letter-spacing:.14em; text-decoration:none; text-transform:uppercase; box-shadow:0 0 28px #d42fff55; }.i10-hero a b { font-size:18px; }
 
 .i10-details { background:radial-gradient(circle at 15% 20%,#9d22e933,transparent 25%),radial-gradient(circle at 85% 70%,#ff8c2433,transparent 24%),#0e0a20; }
@@ -53,7 +52,7 @@ body.i10-intro-open { overflow: hidden; }
 @media (max-width:700px) {
   .i10-section { min-height:auto; padding:88px 18px; }.i10-section > h2,.i10-rsvp h2 { font-size:48px; margin-bottom:40px; }
   .i10-intro__character { width:44vw; height:58%; bottom:2%; }.i10-intro__character--left { left:-8%; }.i10-intro__character--right { right:-8%; }.i10-intro__copy { padding-bottom:120px; }.i10-intro__copy strong { font-size:57px; }
-  .i10-hero { min-height:100svh; padding-top:80px; }.i10-hero__character { width:48vw; height:62%; bottom:-8%; opacity:.28; }.i10-hero__character--left { left:-14%; }.i10-hero__character--right { right:-14%; }.i10-hero h1 { font-size:61px; }.i10-hero h2 { font-size:29px; }
+  .i10-hero { min-height:100svh; padding-top:80px; }.i10-hero__character { z-index:2; width:56vw; height:68%; bottom:-6%; opacity:.96; }.i10-hero__character--left { left:-11%; }.i10-hero__character--right { right:-11%; }.i10-hero h1 { font-size:61px; }.i10-hero h2 { font-size:29px; }
   .i10-details__grid { grid-template-columns:1fr; }.i10-details__grid div + div { border-top:1px solid #ffffff12; }
   .i10-countdown__grid { grid-template-columns:1fr 1fr; }.i10-countdown__grid div { padding:24px 8px; }.i10-countdown strong { font-size:53px; }
   .i10-teams__grid { grid-template-columns:1fr; gap:18px; }.i10-team-vs { margin:-5px auto; }.i10-team { min-height:390px; }.i10-team .i10-character,.i10-team .i10-character-fallback { height:230px; }.i10-team > strong { font-size:41px; }
@@ -69,12 +68,10 @@ body.i10-intro-open { overflow: hidden; }
 .i10-intro__energy { position:absolute; z-index:2; top:39%; width:min(25vw,260px); }
 .i10-intro__energy--left { left:25%; filter:drop-shadow(0 0 18px var(--pink)); }
 .i10-intro__energy--right { right:25%; filter:drop-shadow(0 0 18px var(--gold)); }
-.i10-intro__divider { position:absolute; z-index:4; left:50%; top:0; width:150px; height:100%; object-fit:cover; transform:translateX(-50%); opacity:.84; mix-blend-mode:screen; }
 
 .i10-hero__world { position:absolute; inset-block:0; z-index:-1; width:53%; height:100%; object-fit:cover; opacity:.68; }
 .i10-hero__world--left { left:0; clip-path:polygon(0 0,100% 0,87% 100%,0 100%); }
 .i10-hero__world--right { right:0; clip-path:polygon(13% 0,100% 0,100% 100%,0 100%); }
-.i10-hero__title-bg { position:absolute; z-index:0; left:50%; top:46%; width:min(72vw,720px); transform:translate(-50%,-50%); opacity:.38; mix-blend-mode:screen; }
 .i10-hero__clouds { position:absolute; z-index:0; inset:auto 0 0; width:100%; height:45%; object-fit:cover; opacity:.5; }
 .i10-hero__dragon { position:absolute; z-index:0; right:2%; top:1%; width:min(23vw,260px); opacity:.52; filter:drop-shadow(0 0 20px var(--gold)); }
 .i10-hero__logo { width:135px; height:auto; margin:-10px auto 6px; filter:drop-shadow(0 0 14px var(--pink)); }
@@ -99,9 +96,7 @@ body.i10-intro-open { overflow: hidden; }
   .i10-intro__scene { opacity:.48; }
   .i10-intro__energy { width:145px; top:50%; }
   .i10-intro__energy--left { left:4%; }.i10-intro__energy--right { right:4%; }
-  .i10-intro__divider { width:95px; opacity:.65; }
   .i10-hero__world { opacity:.5; }
-  .i10-hero__title-bg { width:120vw; }
   .i10-hero__dragon { width:145px; opacity:.4; }
   .i10-hero__logo { width:112px; }
   .i10-map { aspect-ratio:4/3; min-height:250px; }

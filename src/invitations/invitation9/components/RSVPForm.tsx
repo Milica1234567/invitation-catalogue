@@ -1,36 +1,10 @@
+import { useRsvp } from "../../../rsvp/useRsvp";
 import { useState } from "react";
-import type { FormEvent } from "react";
 import { invitation9Data as data } from "../invitation9Data";
 
-type Status = "idle" | "loading" | "success" | "error";
-
 function RSVPForm() {
+  const { status, message, submit } = useRsvp("invitation9");
   const [attending, setAttending] = useState("yes");
-  const [status, setStatus] = useState<Status>("idle");
-  const [message, setMessage] = useState("");
-
-  const submit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    if (status === "loading") return;
-    if (!data.rsvp.endpoint) {
-      setStatus("error");
-      setMessage("RSVP još nije povezan sa backendom. Dodajte siguran endpoint u invitation9Data.ts.");
-      return;
-    }
-    setStatus("loading");
-    const form = event.currentTarget;
-    try {
-      const response = await fetch(data.rsvp.endpoint, { method: "POST", body: new FormData(form) });
-      if (!response.ok) throw new Error("Čuvanje nije uspelo.");
-      setStatus("success");
-      setMessage("Hvala. Vaš odgovor je uspešno sačuvan.");
-      form.reset();
-    } catch {
-      setStatus("error");
-      setMessage("Odgovor trenutno nije moguće sačuvati. Molimo pokušajte ponovo.");
-    }
-  };
-
   return (
     <section className="i9-section i9-rsvp">
       <div className="i9-heading" data-reveal><span>Répondez s'il vous plaît</span><h2>Radujemo se vašem dolasku</h2><p>Molimo vas da potvrdite svoj dolazak do {data.rsvp.deadline}</p></div>

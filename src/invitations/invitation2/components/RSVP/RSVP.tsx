@@ -1,16 +1,13 @@
 import { useState } from "react";
-import type { FormEvent } from "react";
+import { useRsvp } from "../../../../rsvp/useRsvp";
 
 import "./RSVP.css";
 
 function RSVP() {
   const [attendance, setAttendance] = useState("yes");
-  const [submitted, setSubmitted] = useState(false);
+  const { submitted, setSubmitted, status, message, submit } = useRsvp("invitation2");
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setSubmitted(true);
-  }
+  const handleSubmit = submit;
 
   return (
     <section className="watercolor-rsvp" aria-labelledby="rsvp-two-title">
@@ -18,7 +15,7 @@ function RSVP() {
       {submitted ? (
         <div className="watercolor-rsvp__thanks" role="status">
           <span>J &amp; N</span><h3>Hvala vam</h3><p>Vaš odgovor je zabeležen.</p>
-          <button type="button" onClick={() => setSubmitted(false)}>Izmeni odgovor</button>
+          <button type="button" onClick={() => setSubmitted()}>Izmeni odgovor</button>
         </div>
       ) : (
         <form onSubmit={handleSubmit} data-reveal>
@@ -34,7 +31,8 @@ function RSVP() {
             <label><span>Broj gostiju</span><select name="guests" defaultValue="1"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></label>
           )}
           <label><span>Poruka mladencima</span><textarea name="message" rows={3} /></label>
-          <button className="watercolor-rsvp__submit" type="submit">Potvrdi dolazak</button>
+          <button className="watercolor-rsvp__submit" type="submit" disabled={status === "loading"}>{status === "loading" ? "Šaljemo…" : "Potvrdi dolazak"}</button>
+            {message && <p role={status === "error" ? "alert" : "status"}>{message}</p>}
         </form>
       )}
     </section>

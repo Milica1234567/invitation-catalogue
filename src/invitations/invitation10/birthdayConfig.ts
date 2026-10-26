@@ -18,7 +18,6 @@ import neonElements from "./assets/transparent/neon-elements.png";
 import rumi from "./assets/transparent/rumi.png";
 import sakuraPetals from "./assets/transparent/sakura-petals.png";
 import stars from "./assets/transparent/stars.png";
-import titleBackground from "./assets/transparent/title-bg.png";
 
 export const birthdayConfig = {
   daughterName: "Lenka",
@@ -35,7 +34,6 @@ export const birthdayConfig = {
   rsvpDeadline: "10. jun 2027.",
   rsvpEndpoint: "",
   assets: {
-    mainBackground: titleBackground,
     rumi,
     goku,
     huntrixBackground,

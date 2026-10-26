@@ -1,5 +1,5 @@
-import { useRef, useState } from "react";
-import type { FormEvent } from "react";
+import { useRef } from "react";
+import { useRsvp } from "../../rsvp/useRsvp";
 import ScrollBloomSequence from "./components/ScrollBloomSequence/ScrollBloomSequence";
 import "./Invitation8.css";
 
@@ -12,12 +12,9 @@ const schedule = [
 
 function Invitation8() {
   const pageRef = useRef<HTMLElement>(null);
-  const [submitted, setSubmitted] = useState(false);
+  const { submitted, setSubmitted, status, message, submit } = useRsvp("invitation8");
 
-  const submitRsvp = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setSubmitted(true);
-  };
+  const submitRsvp = submit;
 
   return (
     <main ref={pageRef} className="invitation-eight">
@@ -92,7 +89,7 @@ function Invitation8() {
             <div className="invitation-eight__thanks" role="status">
               <span aria-hidden="true">✦</span>
               <p>Hvala! Vaš odgovor je zabeležen.</p>
-              <button type="button" onClick={() => setSubmitted(false)}>Izmeni odgovor</button>
+              <button type="button" onClick={() => setSubmitted()}>Izmeni odgovor</button>
             </div>
           ) : (
             <form onSubmit={submitRsvp}>
@@ -100,6 +97,7 @@ function Invitation8() {
                 Ime i prezime
                 <input name="name" type="text" autoComplete="name" required />
               </label>
+              <label>Da li dolazite?<select name="attendance" defaultValue="yes"><option value="yes">Dolazim</option><option value="no">Ne dolazim</option></select></label>
               <label>
                 Broj gostiju
                 <select name="guests" defaultValue="1">
@@ -113,7 +111,8 @@ function Invitation8() {
                 Poruka za mladence
                 <textarea name="message" rows={3} />
               </label>
-              <button className="invitation-eight__button" type="submit">Potvrdi dolazak</button>
+              <button className="invitation-eight__button" type="submit" disabled={status === "loading"}>{status === "loading" ? "Šaljemo…" : "Potvrdi dolazak"}</button>
+            {message && <p role={status === "error" ? "alert" : "status"}>{message}</p>}
             </form>
           )}
         </div>
